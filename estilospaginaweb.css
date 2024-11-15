@@ -1,0 +1,40 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Barra de navegación superior */
+.top-nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.nav-bar {
+    display: flex; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra la navegación horizontalmente */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar li {
+    margin: 0 15px; /* Espacio entre los elementos */
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block; /* Esto ayuda a que el área de clic sea completa */
+}
+
+.nav-bar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+}
