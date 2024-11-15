@@ -5,8 +5,7 @@ function iniciarSesion() {
     const passwordGuardada = localStorage.getItem("contraseñadeusuario");
 
     if (email === emailGuardado && password === passwordGuardada) {
-        alert("Inicio de sesión exitoso");
-        window.location.href = "dashboard.html";
+        window.location.href = "paginaweb.html";
     } else {
         alert("Correo o contraseña incorrectos. Por favor, verifica tus datos o regístrate.");
     }

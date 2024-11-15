@@ -18,8 +18,6 @@ function guardarlocalestorage() {
         localStorage.setItem("nombresusuario", nombres);
         localStorage.setItem("apellidosusuarios", apellidos);
         localStorage.setItem("generousuario", genero);
-
-        alert("Registro exitoso");
         window.location.href = "iniciar-sesion.html";
     } else {
         alert("Por favor, completa todos los campos.");
