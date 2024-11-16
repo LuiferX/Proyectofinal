@@ -3,10 +3,12 @@ function iniciarSesion() {
     const password = document.getElementById("passwordlogin").value;
     const emailGuardado = localStorage.getItem("correousuario");
     const passwordGuardada = localStorage.getItem("contraseñadeusuario");
+    const nombreUsuario = localStorage.getItem("nombreusuario");
 
     if (email === emailGuardado && password === passwordGuardada) {
+        localStorage.setItem("usuarioActivo", nombreUsuario);
         window.location.href = "paginaweb.html";
     } else {
-        alert("Correo o contraseña incorrectos. Por favor, verifica tus datos o regístrate.");
+        alert("Correo o contraseña incorrectos.");
     }
 }

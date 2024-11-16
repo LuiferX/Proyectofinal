@@ -47,3 +47,4 @@ function mostrardatos() {
 
 botonregistro.addEventListener("click", guardarlocalestorage);
 document.addEventListener("DOMContentLoaded", mostrardatos);
+

@@ -276,3 +276,33 @@ body {
     animation: fadeIn 3s ease-in-out forwards;
 }
 
+.usuario-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.usuario-nav span {
+    font-weight: bold;
+    color: #fff;
+}
+
+.cerrar-sesion-btn {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cerrar-sesion-btn:hover {
+    background-color: #d32f2f;
+}
+
+
+.cerrar-sesion-btn:hover {
+    background-color: #d32f2f;
+}
+
