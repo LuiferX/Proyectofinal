@@ -6,7 +6,8 @@ function iniciarSesion() {
     const nombreUsuario = localStorage.getItem("nombreusuario");
 
     if (email === emailGuardado && password === passwordGuardada) {
-        localStorage.setItem("usuarioActivo", nombreUsuario);
+        const nombresGuardados = localStorage.getItem("nombresusuario");
+        localStorage.setItem("usuarioActivo", nombresGuardados);
         window.location.href = "paginaweb.html";
     } else {
         alert("Correo o contraseña incorrectos.");
