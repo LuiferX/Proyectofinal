@@ -1,28 +1,30 @@
-function cargarUsuarioEnNavegacion() {
-    const nombresUsuario = localStorage.getItem("nombresusuario");
-    const apellidosUsuario = localStorage.getItem("apellidosusuarios");
-    const navBar = document.querySelector(".navbar");
+const nombreUsuarioSpan = document.getElementById("nombre-usuario");
+const cerrarSesionBtn = document.getElementById("cerrar-sesion");
+const iniciarSesionBtn = document.getElementById("iniciar-sesion");
 
-    if (nombresUsuario && apellidosUsuario) {
-        const usuarioDiv = document.createElement("div");
-        usuarioDiv.classList.add("usuario-nav");
-
-        const nombreSpan = document.createElement("span");
-        nombreSpan.textContent = `${nombresUsuario} ${apellidosUsuario}`;
-
-        const cerrarSesionBtn = document.createElement("button");
-        cerrarSesionBtn.textContent = "Cerrar Sesión";
-        cerrarSesionBtn.classList.add("cerrar-sesion-btn");
-
-        cerrarSesionBtn.addEventListener("click", () => {
-            localStorage.clear();
-            window.location.href = "paginaweb.html";
-        });
-
-        usuarioDiv.appendChild(nombreSpan);
-        usuarioDiv.appendChild(cerrarSesionBtn);
-        navBar.appendChild(usuarioDiv);
+function mostrarUsuarioActivo() {
+    const usuarioActivo = localStorage.getItem("nombresusuario");
+    if (usuarioActivo) {
+        nombreUsuarioSpan.textContent = `Hola, ${usuarioActivo}`;
+        nombreUsuarioSpan.style.display = "inline";
+        cerrarSesionBtn.style.display = "inline-block";
+        iniciarSesionBtn.style.display = "none";
+    } else {
+        nombreUsuarioSpan.textContent = "";
+        nombreUsuarioSpan.style.display = "none";
+        cerrarSesionBtn.style.display = "none";
+        iniciarSesionBtn.style.display = "inline-block";
     }
 }
 
-document.addEventListener("DOMContentLoaded", cargarUsuarioEnNavegacion);
+function cerrarSesion() {
+    localStorage.removeItem("nombresusuario");
+    alert("Has cerrado sesión.");
+    mostrarUsuarioActivo();
+}
+
+document.addEventListener("DOMContentLoaded", mostrarUsuarioActivo);
+cerrarSesionBtn.addEventListener("click", cerrarSesion);
+iniciarSesionBtn.addEventListener("click", () => {
+    window.location.href = "iniciar-sesion.html";
+});
