@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sendty - Envíos Nacionales e Internacionales</title>
     <link rel="stylesheet" href="estilo.css">
-    <script src="manejarSesion.js" defer></script>
+    <script src="manejarsesion.js" defer></script>
+    <script src="forpaginaweb.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -13,8 +14,11 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#servicios">Servicios</a>
         <a href="#contacto">Contacto</a>
-        <!-- Aquí se mostrará el nombre del usuario si está guardado -->
-        <div id="usuario-info" class="usuario-info"></div>
+        <div id="usuario-info" class="usuario-nav">
+            <span id="nombre-usuario"></span>
+            <button id="cerrar-sesion" class="cerrar-sesion-btn">Cerrar Sesión</button>
+            <button id="iniciar-sesion" class="iniciar-sesion-btn">Iniciar Sesión</button>
+        </div>
     </nav>
 
     <div class="content">
@@ -25,21 +29,6 @@
                 En Sendty, ofrecemos soluciones de envío confiables y seguras para todos tus paquetes, tanto a nivel nacional como internacional. Nos especializamos en asegurar que tus envíos lleguen a tiempo, donde sea que los necesites. Con una red de logística eficiente y tarifas competitivas, somos tu mejor opción para envíos rápidos y seguros.
             </p>
         </div>
-
-        <div class="auth-buttons">
-            <button onclick="window.location.href='iniciar-sesion.html'">Iniciar Sesión</button>
-            <button onclick="window.location.href='registro.html'">Registrar</button>
-        </div>
     </div>
-
-    <script>
-        // Mostrar el nombre del usuario en la barra de navegación si está disponible
-        const usuarioInfo = document.getElementById("usuario-info");
-        const nombreUsuario = localStorage.getItem("nombresusuario");
-
-        if (nombreUsuario) {
-            usuarioInfo.innerHTML = `Bienvenido, ${nombreUsuario}!`;
-        }
-    </script>
 </body>
 </html>
