@@ -15,36 +15,14 @@ function guardarlocalestorage() {
     if (gmail && password && nombres && apellidos && genero) {
         localStorage.setItem("correousuario", gmail);
         localStorage.setItem("contraseñadeusuario", password);
-        localStorage.setItem("nombresusuario", nombres);
-        localStorage.setItem("apellidosusuarios", apellidos);
+        localStorage.setItem("nombresusuario", nombres); // Clave consistente
+        localStorage.setItem("apellidosusuario", apellidos);
         localStorage.setItem("generousuario", genero);
+        localStorage.setItem("usuarioActivo", "true"); // Indica sesión activa
         window.location.href = "iniciar-sesion.html";
     } else {
         alert("Por favor, completa todos los campos.");
     }
 }
 
-function mostrardatos() {
-    const gmailguardado = localStorage.getItem("correousuario");
-    const contraseñaguardada = localStorage.getItem("contraseñadeusuario");
-    const nombresguardados = localStorage.getItem("nombresusuario");
-    const apellidosguardados = localStorage.getItem("apellidosusuarios");
-    const generoguardado = localStorage.getItem("generousuario");
-
-    
-    if (gmailguardado && contraseñaguardada && nombresguardados && apellidosguardados && generoguardado) {
-        console.log("Datos guardados:");
-        console.log("Correo:", gmailguardado);
-        console.log("Contraseña:", contraseñaguardada);
-        console.log("Nombres:", nombresguardados);
-        console.log("Apellidos:", apellidosguardados);
-        console.log("Género:", generoguardado);
-        nombresregistro.value = nombresguardados;
-        apellidosregistro.value = apellidosguardados;
-        generoregistro.value = generoguardado;
-    }
-}
-
 botonregistro.addEventListener("click", guardarlocalestorage);
-document.addEventListener("DOMContentLoaded", mostrardatos);
-
