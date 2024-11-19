@@ -1,23 +1,33 @@
 window.onload = function() {
-    const usuarioActivo = localStorage.getItem("usuarioActivo");
-    const nombreUsuario = localStorage.getItem("nombresusuarios");
+    const nombreUsuario = localStorage.getItem("nombreUsuario");
+    const nombreUsuarioSpan = document.getElementById("nombre-usuario");
+    const botonIniciarSesion = document.getElementById("iniciar-sesion");
+    const botonCerrarSesion = document.getElementById("cerrar-sesion");
 
-    if (usuarioActivo) {
-        document.getElementById("nombre-usuario").textContent = `Bienvenido, ${nombreUsuario}`;
-        document.getElementById("cerrar-sesion").style.display = "block";
-        document.getElementById("iniciar-sesion").style.display = "none";
+    if (nombreUsuario) {
+        nombreUsuarioSpan.textContent = `Bienvenido, ${nombreUsuario}`;
+        botonIniciarSesion.style.display = "none";
+        botonCerrarSesion.style.display = "block";
     } else {
-        document.getElementById("cerrar-sesion").style.display = "none";
-        document.getElementById("iniciar-sesion").style.display = "block";
+        nombreUsuarioSpan.textContent = "";
+        botonIniciarSesion.style.display = "block";
+        botonCerrarSesion.style.display = "none";
     }
-};
+}
+
+function iniciarSesion() {
+    const correo = document.getElementById("gmaillogin").value;
+    const password = document.getElementById("passwordlogin").value;
+
+    if (correo && password) {
+        localStorage.setItem("nombreUsuario", correo.split('@')[0]);
+        window.location.href = "index.html";
+    } else {
+        alert("Por favor, ingresa tus credenciales");
+    }
+}
 
 document.getElementById("cerrar-sesion").onclick = function() {
-    localStorage.removeItem("usuarioActivo");
-    localStorage.removeItem("nombreusuario");
-    window.location.reload();
-};
-
-document.getElementById("iniciar-sesion").onclick = function() {
+    localStorage.removeItem("nombreUsuario");
     window.location.href = "iniciar-sesion.html";
-};
+}

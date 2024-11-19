@@ -15,10 +15,10 @@ function guardarlocalestorage() {
     if (gmail && password && nombres && apellidos && genero) {
         localStorage.setItem("correousuario", gmail);
         localStorage.setItem("contraseñadeusuario", password);
-        localStorage.setItem("nombresusuario", nombres); // Clave consistente
+        localStorage.setItem("nombresusuario", nombres); 
         localStorage.setItem("apellidosusuario", apellidos);
         localStorage.setItem("generousuario", genero);
-        localStorage.setItem("usuarioActivo", "true"); // Indica sesión activa
+        localStorage.setItem("usuarioActivo", "true"); 
         window.location.href = "iniciar-sesion.html";
     } else {
         alert("Por favor, completa todos los campos.");
