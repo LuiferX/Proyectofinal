@@ -21,7 +21,7 @@ function iniciarSesion() {
 
     if (correo && password) {
         localStorage.setItem("nombreUsuario", correo.split('@')[0]);
-        window.location.href = "index.html";
+        window.location.href = "paginaweb.html";
     } else {
         alert("Por favor, ingresa tus credenciales");
     }
